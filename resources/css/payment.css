@@ -1,0 +1,2011 @@
+/* Payment Page Styles - Ultra Modern Mobile First */
+.payment-card,
+.status-card,
+.details-card {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 50%, rgba(15, 23, 42, 0.95) 100%);
+  backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+    0 4px 20px rgba(59, 130, 246, 0.1);
+  animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-card::before,
+.status-card::before,
+.details-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+}
+
+.payment-header {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+  position: relative;
+}
+
+.payment-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  border-radius: 2px;
+}
+
+/* QR Code Section - Ultra Enhanced */
+.qr-section {
+  text-align: center;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.qr-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.qr-display, .qr-generated {
+  background: linear-gradient(145deg, #ffffff 0%, #f1f5f9 50%, #ffffff 100%);
+  padding: 24px;
+  border-radius: 24px;
+  box-shadow: 
+    0 25px 80px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.9) inset,
+    0 8px 32px rgba(16, 185, 129, 0.3);
+  position: relative;
+  transform: perspective(1000px) rotateX(2deg);
+}
+
+.qr-display::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+  border-radius: 27px;
+  z-index: -1;
+  box-shadow: 
+    0 0 20px rgba(16, 185, 129, 0.5),
+    0 0 40px rgba(16, 185, 129, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.qr-display::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(5, 150, 105, 0.2) 100%);
+  border-radius: 30px;
+  z-index: -2;
+  filter: blur(8px);
+}
+
+.qr-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 16px;
+  margin: 0 auto;
+  display: block;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.qr-placeholder {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 50%, rgba(15, 23, 42, 0.9) 100%);
+  border: 2px dashed rgba(148, 163, 184, 0.4);
+  border-radius: 24px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  animation: placeholderPulse 2.5s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.qr-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.placeholder-content {
+  text-align: center;
+  color: rgba(148, 163, 184, 0.9);
+  z-index: 1;
+}
+
+/* QR Info Cards - Enhanced */
+.qr-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.qr-amount, .qr-expiry {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.08) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.qr-amount::before, .qr-expiry::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.6), transparent);
+}
+
+.qr-expiry {
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.15) 0%, rgba(245, 101, 101, 0.08) 100%);
+  border-color: rgba(251, 146, 60, 0.3);
+}
+
+.qr-expiry::before {
+  background: linear-gradient(90deg, transparent, rgba(251, 146, 60, 0.6), transparent);
+}
+
+.qr-status {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(37, 99, 235, 0.08) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.qr-status::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.6), transparent);
+}
+
+.status-label, .amount-label, .expiry-label {
+  color: rgba(226, 232, 240, 0.95);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  flex: 0 0 auto;
+}
+
+.status-value, .amount-value, .expiry-value {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.025em;
+  text-align: right;
+  min-width: 80px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.amount-value {
+  color: #10b981;
+  font-weight: 800;
+  font-size: 18px;
+  text-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+  min-width: 100px;
+}
+
+.expiry-value {
+  color: #f59e0b;
+  font-weight: 700;
+  font-size: 16px;
+  text-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+  min-width: 90px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Loading dots animation untuk status */
+.loading-dots {
+  animation: loadingDots 1.5s infinite;
+  margin-left: 0.25rem;
+  font-weight: 600;
+}
+
+@keyframes loadingDots {
+  0%, 20% { opacity: 0; }
+  50% { opacity: 1; }
+  80%, 100% { opacity: 0; }
+}
+
+.expired-text {
+  color: #ef4444 !important;
+  font-weight: 800;
+  font-size: 14px;
+  text-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+  animation: blink 1s infinite;
+}
+
+/* Payment Apps - Enhanced Mobile */
+.payment-apps {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.6) 0%, rgba(31, 41, 55, 0.4) 100%);
+  border: 1px solid rgba(75, 85, 99, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.apps-title {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.app-item {
+  background: linear-gradient(135deg, rgba(55, 65, 81, 0.6) 0%, rgba(31, 41, 55, 0.8) 100%);
+  border: 1px solid rgba(75, 85, 99, 0.3);
+  border-radius: 12px;
+  padding: 12px 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.app-item:hover::before {
+  left: 100%;
+}
+
+.app-item:hover {
+  transform: translateY(-2px) scale(1.05);
+  border-color: rgba(34, 197, 94, 0.5);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.app-item.featured {
+  border: 2px solid #10b981;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(5, 150, 105, 0.1) 100%);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.app-icon {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.app-name {
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Bank/E-Wallet Cards - Enhanced */
+.bank-card, .ewallet-card {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%);
+  border: 1px solid rgba(75, 85, 99, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+.bank-header, .ewallet-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(75, 85, 99, 0.3);
+}
+
+.bank-icon, .ewallet-icon {
+  font-size: 32px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.bank-name, .ewallet-name {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.bank-type, .ewallet-type {
+  color: rgba(156, 163, 175, 0.8);
+  font-size: 14px;
+}
+
+.bank-details, .ewallet-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-label {
+  color: rgba(209, 213, 219, 0.8);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.detail-value-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(55, 65, 81, 0.6) 0%, rgba(31, 41, 55, 0.8) 100%);
+  border: 1px solid rgba(75, 85, 99, 0.3);
+  border-radius: 12px;
+}
+
+.detail-value {
+  flex: 1;
+  color: white;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.detail-value.amount {
+  color: #10b981;
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
+
+.copy-btn-mobile {
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.copy-btn-mobile:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.bank-note, .ewallet-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 12px;
+}
+
+.note-icon {
+  color: #60a5fa;
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.note-text {
+  color: rgba(191, 219, 254, 0.9);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Status Card - Enhanced */
+.status-card {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%);
+  border: 1px solid rgba(75, 85, 99, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+.status-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.status-icon {
+  font-size: 24px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.status-text {
+  flex: 1;
+}
+
+.status-title {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.status-desc {
+  color: rgba(156, 163, 175, 0.8);
+  font-size: 14px;
+}
+
+.status-check-btn {
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+}
+
+.status-check-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.status-check-btn:disabled {
+  background: linear-gradient(135deg, rgba(75, 85, 99, 0.6) 0%, rgba(55, 65, 81, 0.8) 100%);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Details Card - Enhanced */
+.details-card {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%);
+  border: 1px solid rgba(75, 85, 99, 0.3);
+  border-radius: 16px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  overflow: hidden;
+}
+
+.details-toggle {
+  width: 100%;
+  padding: 20px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.details-toggle:hover {
+  background: rgba(55, 65, 81, 0.3);
+}
+
+.toggle-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-icon {
+  color: rgba(156, 163, 175, 0.8);
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.details-content {
+  padding: 0 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-top: 1px solid rgba(75, 85, 99, 0.2);
+}
+
+.detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section-title {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 24px;
+}
+
+.detail-line {
+  color: rgba(209, 213, 219, 0.8);
+  font-size: 14px;
+}
+
+/* Action Buttons - Enhanced */
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.action-btn.primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+}
+
+.action-btn.primary:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.action-btn.secondary {
+  background: linear-gradient(135deg, rgba(75, 85, 99, 0.8) 0%, rgba(55, 65, 81, 0.9) 100%);
+  color: white;
+  border: 1px solid rgba(75, 85, 99, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.action-btn.secondary:hover {
+  background: linear-gradient(135deg, rgba(55, 65, 81, 0.9) 0%, rgba(31, 41, 55, 1) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Info - Enhanced */
+.footer-info {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.6) 0%, rgba(31, 41, 55, 0.4) 100%);
+  border: 1px solid rgba(75, 85, 99, 0.2);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.info-text {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.info-subtext {
+  color: rgba(156, 163, 175, 0.7);
+  font-size: 12px;
+}
+
+/* Enhanced QR Glow Animation */
+@keyframes qrGlow {
+  0% {
+    box-shadow: 
+      0 10px 40px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.8) inset,
+      0 0 20px rgba(59, 130, 246, 0.2);
+  }
+  100% {
+    box-shadow: 
+      0 15px 50px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.9) inset,
+      0 0 30px rgba(59, 130, 246, 0.4);
+  }
+}
+
+/* Mobile Responsive Enhancements */
+@media (max-width: 480px) {
+  .qr-image {
+    width: 240px !important;
+    height: 240px !important;
+  }
+  
+  .qr-placeholder {
+    width: 240px !important;
+    height: 240px !important;
+  }
+  
+  .apps-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+  
+  .app-item {
+    padding: 10px 6px !important;
+  }
+  
+  .app-icon {
+    font-size: 20px !important;
+    margin-bottom: 6px !important;
+  }
+  
+  .app-name {
+    font-size: 10px !important;
+  }
+  
+  .action-buttons {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  
+  .action-btn {
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+  }
+  
+  .payment-card,
+  .status-card,
+  .details-card {
+    padding: 16px !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .bank-card,
+  .ewallet-card {
+    padding: 16px !important;
+  }
+  
+  .detail-value-container {
+    padding: 10px 12px !important;
+  }
+  
+  .detail-value {
+    font-size: 14px !important;
+  }
+  
+  .detail-value.amount {
+    font-size: 16px !important;
+  }
+}
+
+.order-info-section,
+.customer-info-section,
+.product-info-section,
+.game-info-section,
+.payment-summary-section {
+  @apply mb-6 pb-4 border-b border-gray-700/30;
+}
+
+.section-title {
+  @apply text-lg font-semibold text-white mb-4 flex items-center gap-2;
+}
+
+.order-info-item,
+.customer-info-item,
+.game-info-item {
+  @apply flex justify-between items-center py-2;
+}
+
+.order-info-label,
+.customer-info-label,
+.game-info-label {
+  @apply text-gray-400 text-sm;
+}
+
+.order-info-value,
+.customer-info-value,
+.game-info-value {
+  @apply text-white font-medium;
+}
+
+.order-status {
+  @apply px-3 py-1 rounded-full text-xs font-semibold;
+}
+
+.status-pending { @apply bg-yellow-500/20 text-yellow-400; }
+.status-paid { @apply bg-green-500/20 text-green-400; }
+.status-failed { @apply bg-red-500/20 text-red-400; }
+.status-processing { @apply bg-blue-500/20 text-blue-400; }
+.status-completed { @apply bg-purple-500/20 text-purple-400; }
+
+.product-info-card {
+  @apply bg-gray-700/30 rounded-lg p-4;
+}
+
+.product-name {
+  @apply text-white font-bold text-lg mb-1;
+}
+
+.product-package {
+  @apply text-gray-300 text-sm mb-3;
+}
+
+.product-details {
+  @apply flex justify-between items-center;
+}
+
+.product-quantity {
+  @apply text-gray-400 text-sm;
+}
+
+.product-price {
+  @apply text-green-400 font-bold;
+}
+
+.payment-summary-items {
+  @apply space-y-2;
+}
+
+.payment-summary-item {
+  @apply flex justify-between items-center;
+}
+
+.payment-summary-total {
+  @apply pt-2 border-t border-gray-600 font-bold text-lg;
+}
+
+.payment-summary-label {
+  @apply text-gray-400;
+}
+
+.payment-summary-value {
+  @apply text-white font-medium;
+}
+
+.payment-method-selected {
+  @apply flex items-center gap-4 p-4 bg-gray-700/30 rounded-lg mb-6;
+}
+
+.payment-method-icon {
+  @apply w-16 h-16 rounded-full flex items-center justify-center;
+}
+
+.payment-icon-qris { @apply bg-blue-500/20; }
+.payment-icon-bank { @apply bg-green-500/20; }
+.payment-icon-ewallet { @apply bg-purple-500/20; }
+
+.payment-method-name {
+  @apply text-white font-bold text-lg;
+}
+
+.payment-method-desc {
+  @apply text-gray-400 text-sm;
+}
+
+/* QRIS Styles */
+.qris-payment {
+  @apply mb-6;
+}
+
+.qris-header {
+  @apply text-center mb-6;
+}
+
+.qris-title {
+  @apply text-xl font-bold text-white mb-2;
+}
+
+.qris-subtitle {
+  @apply text-gray-400 text-sm;
+}
+
+.qris-container {
+  @apply flex flex-col lg:flex-row gap-6 items-center;
+}
+
+.qris-code {
+  @apply flex-shrink-0;
+}
+
+.qr-code-display {
+  @apply bg-white p-4 rounded-lg;
+}
+
+.qris-info {
+  @apply space-y-4;
+}
+
+.qris-amount,
+.qris-expiry {
+  @apply flex flex-col gap-1;
+}
+
+.qris-amount-label,
+.qris-expiry-label {
+  @apply text-gray-400 text-sm;
+}
+
+.qris-amount-value {
+  @apply text-green-400 font-bold text-xl;
+}
+
+.qris-expiry-value {
+  @apply text-orange-400 font-medium;
+}
+
+/* Bank Transfer Styles */
+.bank-transfer-payment {
+  @apply mb-6;
+}
+
+.bank-transfer-header {
+  @apply text-center mb-6;
+}
+
+.bank-transfer-title {
+  @apply text-xl font-bold text-white mb-2;
+}
+
+.bank-transfer-subtitle {
+  @apply text-gray-400 text-sm;
+}
+
+.va-card {
+  @apply bg-gray-700/30 rounded-lg p-4 mb-4;
+}
+
+.va-bank {
+  @apply flex items-center gap-3 mb-4;
+}
+
+.va-bank-logo {
+  @apply w-8 h-8 rounded;
+}
+
+.va-bank-name {
+  @apply text-white font-semibold;
+}
+
+.va-number-section {
+  @apply mb-4;
+}
+
+.va-number-label {
+  @apply text-gray-400 text-sm block mb-2;
+}
+
+.va-number-container {
+  @apply flex items-center gap-3;
+}
+
+.va-number {
+  @apply text-white font-mono text-lg bg-gray-800 px-3 py-2 rounded flex-1;
+}
+
+.va-copy-btn {
+  @apply bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded text-sm transition-colors;
+}
+
+.va-amount {
+  @apply flex justify-between items-center;
+}
+
+.va-amount-label {
+  @apply text-gray-400 text-sm;
+}
+
+.va-amount-value {
+  @apply text-green-400 font-bold;
+}
+
+/* E-Wallet Styles */
+.ewallet-payment {
+  @apply mb-6;
+}
+
+.ewallet-header {
+  @apply text-center mb-6;
+}
+
+.ewallet-title {
+  @apply text-xl font-bold text-white mb-2;
+}
+
+.ewallet-subtitle {
+  @apply text-gray-400 text-sm;
+}
+
+.ewallet-options {
+  @apply grid grid-cols-2 gap-4;
+}
+
+.ewallet-option {
+  @apply bg-gray-700/30 hover:bg-gray-700/50 rounded-lg p-4 cursor-pointer transition-colors text-center;
+}
+
+.ewallet-icon {
+  @apply text-3xl mb-2;
+}
+
+.ewallet-name {
+  @apply text-white font-medium;
+}
+
+/* Payment Instructions */
+.payment-instructions {
+  @apply mb-6;
+}
+
+.instructions-title {
+  @apply text-lg font-semibold text-white mb-4;
+}
+
+.instructions-list {
+  @apply space-y-3;
+}
+
+.instruction-item {
+  @apply flex items-start gap-3;
+}
+
+.instruction-number {
+  @apply bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0;
+}
+
+.instruction-text {
+  @apply text-gray-300 text-sm;
+}
+
+/* Payment Status */
+.payment-status-section {
+  @apply bg-gray-700/30 rounded-lg p-4;
+}
+
+.payment-status-info {
+  @apply flex items-center gap-4 mb-4;
+}
+
+.payment-status-text {
+  @apply flex-1;
+}
+
+.payment-status-title {
+  @apply text-white font-semibold;
+}
+
+.payment-status-desc {
+  @apply text-gray-400 text-sm;
+}
+
+.payment-check-btn {
+  @apply w-full bg-blue-500 hover:bg-blue-600 disabled:bg-gray-600 text-white py-3 px-4 rounded-lg transition-colors;
+}
+
+/* Footer */
+.payment-footer {
+  @apply mt-12 pt-8 border-t border-gray-700/50;
+}
+
+.payment-footer-content {
+  @apply flex flex-col lg:flex-row justify-between items-center gap-6;
+}
+
+.payment-footer-info {
+  @apply text-center lg:text-left;
+}
+
+.payment-footer-text {
+  @apply text-white font-medium mb-1;
+}
+
+.payment-footer-subtext {
+  @apply text-gray-400 text-sm;
+}
+
+.payment-footer-actions {
+  @apply flex gap-4;
+}
+
+.footer-btn {
+  @apply px-6 py-3 rounded-lg font-medium transition-colors;
+}
+
+.footer-btn-primary {
+  @apply bg-green-500 hover:bg-green-600 text-white;
+}
+
+.footer-btn-secondary {
+  @apply bg-gray-600 hover:bg-gray-700 text-white;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out;
+}
+
+/* Loading skeleton */
+.loading-skeleton {
+  @apply bg-gray-700/50 animate-pulse rounded-lg;
+}
+
+/* Error state */
+.error-state {
+  @apply text-center py-12;
+}
+
+.error-icon {
+  @apply text-6xl mb-4;
+}
+
+.error-title {
+  @apply text-2xl font-bold text-white mb-2;
+}
+
+.error-message {
+  @apply text-gray-400 mb-6;
+}
+
+.retry-btn {
+  @apply bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-colors;
+}
+
+/* Holographic text effect */
+.holographic {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: holographic 3s ease-in-out infinite;
+}
+
+@keyframes holographic {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Enhanced Product Info Styles */
+.product-header {
+  @apply mb-4 pb-3 border-b border-gray-600;
+}
+
+.product-name {
+  @apply text-xl font-bold text-white mb-2;
+}
+
+.product-category {
+  @apply flex items-center gap-2;
+}
+
+.category-badge {
+  @apply bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.product-package {
+  @apply mb-4 space-y-3;
+}
+
+.package-info, .package-price {
+  @apply flex items-center justify-between py-2 px-3 bg-gray-800/30 rounded-lg;
+}
+
+.package-label, .price-label {
+  @apply text-gray-400 font-medium text-sm;
+}
+
+.package-name {
+  @apply text-white font-semibold;
+}
+
+.price-value {
+  @apply text-green-400 font-bold text-lg;
+}
+
+.product-details {
+  @apply mb-4 space-y-2;
+}
+
+.detail-row {
+  @apply flex items-center justify-between py-2 px-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors;
+}
+
+.detail-label {
+  @apply text-gray-400 text-sm;
+}
+
+.detail-value {
+  @apply text-white font-semibold;
+}
+
+.product-description {
+  @apply mt-4 pt-4 border-t border-gray-600;
+}
+
+.description-text {
+  @apply text-gray-300 text-sm leading-relaxed flex items-start gap-2;
+}
+
+.description-icon {
+  @apply text-blue-400 mt-0.5 flex-shrink-0;
+}
+
+/* Enhanced QRIS Info Styles */
+.qris-transaction {
+  @apply bg-gray-800/50 rounded-lg p-3 mt-3;
+}
+
+.qris-transaction-label {
+  @apply block text-gray-400 text-xs mb-1;
+}
+
+.qris-transaction-value {
+  @apply text-white font-mono text-sm break-all;
+}
+
+.qris-debug {
+  @apply bg-gray-900/80 border border-gray-600 rounded-lg;
+}
+
+/* Responsive Improvements */
+@media (max-width: 768px) {
+  .product-package, .product-details {
+    @apply space-y-2;
+  }
+  
+  .detail-row, .package-info, .package-price {
+    @apply py-1.5 px-2;
+  }
+  
+  .price-value {
+    @apply text-base;
+  }
+  
+  .product-name {
+    @apply text-lg;
+  }
+  
+  .category-badge {
+    @apply text-xs px-2;
+  }
+}
+
+/* Animation for new elements */
+.product-info-card {
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced QRIS Payment Styles */
+.qris-payment {
+  @apply space-y-6;
+}
+
+.qris-header {
+  @apply text-center mb-8;
+}
+
+.qris-icon-wrapper {
+  @apply flex justify-center mb-4;
+}
+
+.qris-icon {
+  @apply text-6xl bg-gradient-to-br from-blue-500 to-purple-600 w-20 h-20 rounded-full flex items-center justify-center shadow-lg;
+  animation: pulse 2s infinite;
+}
+
+.qris-title {
+  @apply text-2xl font-bold text-white mb-3;
+}
+
+.qris-subtitle {
+  @apply text-gray-400 text-lg;
+}
+
+.qris-main-container {
+  @apply space-y-8;
+}
+
+.qris-code-section {
+  @apply bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 border border-gray-700/50;
+}
+
+.qr-code-wrapper {
+  @apply flex justify-center mb-6;
+}
+
+.qr-code-display {
+  @apply bg-white p-6 rounded-2xl shadow-2xl;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+.qr-code-placeholder {
+  @apply bg-gray-800 border-2 border-dashed border-gray-600 rounded-2xl p-8 text-center w-64 h-64 flex flex-col items-center justify-center mx-auto;
+}
+
+.placeholder-icon {
+  @apply text-6xl mb-4 text-gray-500;
+}
+
+.placeholder-title {
+  @apply text-white text-lg mb-2 font-semibold;
+}
+
+.placeholder-subtitle {
+  @apply text-gray-400 text-sm;
+}
+
+.qr-code-info {
+  @apply space-y-4;
+}
+
+.qr-info-item {
+  @apply flex items-center gap-4 p-4 bg-gray-800/30 rounded-xl hover:bg-gray-700/30 transition-colors;
+}
+
+.qr-info-icon {
+  @apply text-2xl w-12 h-12 rounded-full flex items-center justify-center;
+}
+
+.qr-info-item.qr-amount .qr-info-icon {
+  @apply bg-green-500/20 text-green-400;
+}
+
+.qr-info-item.qr-expiry .qr-info-icon {
+  @apply bg-orange-500/20 text-orange-400;
+}
+
+.qr-info-item.qr-transaction .qr-info-icon {
+  @apply bg-blue-500/20 text-blue-400;
+}
+
+.qr-info-content {
+  @apply flex-1;
+}
+
+.qr-info-label {
+  @apply block text-gray-400 text-sm mb-1;
+}
+
+.qr-info-value {
+  @apply text-white font-semibold;
+}
+
+.qr-info-value.amount {
+  @apply text-green-400 font-bold text-xl;
+}
+
+.qr-info-value.expiry {
+  @apply text-orange-400;
+}
+
+.qr-info-value.transaction {
+  @apply text-blue-400 font-mono text-sm break-all;
+}
+
+/* Payment Apps Section */
+.payment-apps-section {
+  @apply bg-gradient-to-br from-gray-800/30 to-gray-900/30 rounded-2xl p-6 border border-gray-700/30;
+}
+
+.payment-apps-title {
+  @apply text-lg font-bold text-white mb-4 text-center;
+}
+
+.payment-apps-grid {
+  @apply grid grid-cols-3 gap-4;
+}
+
+.payment-app-item {
+  @apply flex flex-col items-center gap-2 p-3 bg-gray-800/50 rounded-xl hover:bg-gray-700/50 transition-all duration-300 cursor-pointer;
+}
+
+.payment-app-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.app-icon {
+  @apply text-2xl w-10 h-10 rounded-full flex items-center justify-center;
+}
+
+.app-icon.gopay {
+  @apply bg-green-500/20;
+}
+
+.app-icon.ovo {
+  @apply bg-purple-500/20;
+}
+
+.app-icon.dana {
+  @apply bg-blue-500/20;
+}
+
+.app-icon.shopeepay {
+  @apply bg-orange-500/20;
+}
+
+.app-icon.linkaja {
+  @apply bg-red-500/20;
+}
+
+.app-icon.bank {
+  @apply bg-gray-500/20;
+}
+
+.app-name {
+  @apply text-white text-xs font-medium text-center;
+}
+
+/* Animations */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 0 40px rgba(59, 130, 246, 0.3);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .qris-icon {
+    @apply w-16 h-16 text-5xl;
+  }
+  
+  .qris-title {
+    @apply text-xl;
+  }
+  
+  .qris-subtitle {
+    @apply text-base;
+  }
+  
+  .payment-apps-grid {
+    @apply grid-cols-2 gap-3;
+  }
+  
+  .qr-code-placeholder {
+    @apply w-48 h-48 p-6;
+  }
+  
+  .placeholder-icon {
+    @apply text-4xl;
+  }
+  
+  .qr-info-item {
+    @apply p-3;
+  }
+  
+  .qr-info-icon {
+    @apply w-10 h-10 text-xl;
+  }
+  
+  .qr-info-value.amount {
+    @apply text-lg;
+  }
+}
+
+/* Manual Payment Styles */
+.manual-bank-transfer,
+.manual-ewallet {
+  @apply space-y-4;
+}
+
+.manual-payment-header {
+  @apply text-center mb-6;
+}
+
+.manual-payment-icon {
+  @apply text-4xl mb-2;
+}
+
+.manual-payment-title {
+  @apply text-xl font-bold text-white mb-2;
+}
+
+.manual-payment-subtitle {
+  @apply text-gray-400 text-sm;
+}
+
+.manual-bank-card,
+.manual-ewallet-card {
+  @apply bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-xl p-6 border border-gray-700/50 backdrop-blur-sm;
+}
+
+.bank-info,
+.ewallet-info {
+  @apply flex items-center gap-4 mb-6 pb-4 border-b border-gray-700/50;
+}
+
+.bank-logo,
+.ewallet-logo {
+  @apply text-3xl;
+}
+
+.bank-details,
+.ewallet-details {
+  @apply flex-1;
+}
+
+.bank-name,
+.ewallet-name {
+  @apply text-lg font-bold text-white mb-1;
+}
+
+.bank-code,
+.ewallet-type {
+  @apply text-sm text-gray-400;
+}
+
+.account-info,
+.ewallet-account-info {
+  @apply space-y-4 mb-6;
+}
+
+.account-item {
+  @apply space-y-2;
+}
+
+.account-label {
+  @apply block text-sm font-medium text-gray-300;
+}
+
+.account-value-container,
+.amount-container {
+  @apply flex items-center gap-2 p-3 bg-gray-700/50 rounded-lg border border-gray-600/50;
+}
+
+.account-value,
+.amount-value {
+  @apply flex-1 text-white font-mono text-lg;
+}
+
+.amount-item .amount-value {
+  @apply text-green-400 font-bold text-xl;
+}
+
+.copy-btn {
+  @apply px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-xs rounded-md transition-colors duration-200 flex-shrink-0;
+}
+
+.copy-btn:hover {
+  @apply bg-blue-500;
+}
+
+.payment-note {
+  @apply flex items-start gap-3 p-4 bg-blue-900/20 border border-blue-700/30 rounded-lg;
+}
+
+.note-icon {
+  @apply text-blue-400 text-lg flex-shrink-0;
+}
+
+.note-text {
+  @apply text-blue-200 text-sm leading-relaxed;
+}
+
+/* Core API Badge Styles */
+.qris-api-badge {
+  @apply inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500 to-blue-500 text-white text-sm font-semibold rounded-full shadow-lg mt-3;
+  animation: pulse 2s infinite;
+}
+
+.api-badge-icon {
+  @apply text-yellow-300 text-base;
+}
+
+.api-badge-text {
+  @apply font-bold;
+}
+
+/* Enhanced QR Info Countdown */
+.qr-info-countdown {
+  @apply mt-3 p-3 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg border border-gray-600;
+}
+
+.countdown-text {
+  @apply text-xl font-mono font-bold text-green-400 text-center block;
+}
+
+.qr-info-value.expiry.text-red-400 {
+  @apply text-red-400;
+}
+
+.qr-info-countdown .countdown-text.text-red-400 {
+  @apply text-red-400;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.5; }
+}
+
+/* Copy Button Small */
+.copy-btn-small {
+  @apply ml-3 px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white text-xs rounded-md transition-all duration-200 flex-shrink-0;
+}
+
+.copy-btn-small:hover {
+  @apply transform scale-105 shadow-md;
+}
+
+/* Featured Payment App */
+.payment-app-item.featured {
+  @apply ring-2 ring-green-400 bg-gradient-to-br from-green-900/30 to-green-800/30 transform scale-105;
+  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.2);
+}
+
+.app-featured {
+  @apply text-xs text-green-400 font-bold bg-green-900/50 px-2 py-1 rounded-full;
+}
+
+/* Core API Status Section */
+.qris-core-api-status {
+  @apply mt-8 p-6 bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-2xl border border-gray-600/50 backdrop-blur-sm;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.core-api-status-header {
+  @apply flex items-center gap-3 mb-4 pb-3 border-b border-gray-700/50;
+}
+
+.status-icon {
+  @apply text-yellow-400 text-2xl;
+  animation: pulse 2s infinite;
+}
+
+.status-text {
+  @apply text-white font-bold text-lg;
+}
+
+.core-api-features {
+  @apply grid grid-cols-1 sm:grid-cols-3 gap-4;
+}
+
+.feature-item {
+  @apply flex items-center gap-3 p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors;
+}
+
+.feature-icon {
+  @apply text-green-400 text-lg;
+}
+
+.feature-text {
+  @apply text-gray-200 font-medium text-sm;
+}
+
+/* Enhanced QR Code Info Items */
+.qr-info-item.qr-acquirer .qr-info-icon {
+  @apply bg-orange-500/20 text-orange-400;
+}
+
+.qr-info-item.qr-type .qr-info-icon {
+  @apply bg-purple-500/20 text-purple-400;
+}
+
+.qr-info-value.acquirer {
+  @apply text-orange-400 font-bold;
+}
+
+.qr-info-value.type {
+  @apply text-purple-400 font-semibold;
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 640px) {
+  .qris-api-badge {
+    @apply px-3 py-1.5 text-xs;
+  }
+  
+  .api-badge-icon {
+    @apply text-sm;
+  }
+  
+  .core-api-features {
+    @apply grid-cols-1 gap-3;
+  }
+  
+  .feature-item {
+    @apply p-2;
+  }
+  
+  .feature-icon {
+    @apply text-base;
+  }
+  
+  .feature-text {
+    @apply text-xs;
+  }
+  
+  .countdown-text {
+    @apply text-lg;
+  }
+  
+  .qr-info-countdown {
+    @apply p-2;
+  }
+  
+  .copy-btn-small {
+    @apply ml-2 px-2 py-0.5 text-xs;
+  }
+}
+
+/* Enhanced Animation for Core API Elements */
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.qris-api-badge {
+  animation: slideInFromTop 0.6s ease-out, pulse 2s infinite 0.6s;
+}
+
+.qris-core-api-status {
+  animation: slideInFromTop 0.8s ease-out 0.2s both;
+}
+
+/* Enhanced Glow Effects */
+.qr-code-display img {
+  @apply transition-all duration-300;
+}
+
+.qr-code-display img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+}
+
+/* Enhanced Payment Status Colors */
+.qr-info-value.expiry {
+  @apply transition-colors duration-300;
+}
+
+.qr-info-value.expiry.text-red-400 {
+  @apply text-red-400 font-bold;
+  text-shadow: 0 0 10px rgba(248, 113, 113, 0.5);
+}
+
+/* Loading States for QR Code */
+.qr-code-placeholder {
+  @apply relative overflow-hidden;
+}
+
+.qr-code-placeholder::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-gray-600/20 to-transparent;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Additional Missing Animations */
+@keyframes borderRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes placeholderPulse {
+  0%, 100% { 
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+/* Payment Instructions Card - Enhanced */
+.payment-instructions-card {
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-instructions-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.6), transparent);
+}
+
+.instructions-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.instructions-icon {
+  font-size: 24px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(37, 99, 235, 0.1) 100%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.instructions-title {
+  color: rgba(191, 219, 254, 0.95);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+.instructions-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.instruction-step {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(37, 99, 235, 0.04) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.instruction-step:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(37, 99, 235, 0.06) 100%);
+  border-color: rgba(59, 130, 246, 0.25);
+  transform: translateX(4px);
+}
+
+.step-number {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.step-text {
+  color: rgba(226, 232, 240, 0.9);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Legacy Instructions Section - Enhanced */
+.instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Mobile Responsive Updates */
+@media (max-width: 480px) {
+  .qr-image {
+    width: 260px !important;
+    height: 260px !important;
+  }
+  
+  .qr-placeholder {
+    width: 260px !important;
+    height: 260px !important;
+  }
+  
+  .qr-display, .qr-generated {
+    padding: 20px !important;
+  }
+  
+  .instruction-step {
+    padding: 10px 12px !important;
+    gap: 12px !important;
+  }
+  
+  .step-number {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 12px !important;
+  }
+  
+  .step-text {
+    font-size: 13px !important;
+  }
+}
+
+/* Enhanced Button Styles */
+.payment-check-btn {
+  @apply relative overflow-hidden;
+}
+
+.payment-check-btn::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent;
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.payment-check-btn:hover::before {
+  transform: translateX(100%);
+}
+
+/* Enhanced Card Hover Effects */
+.order-summary-card,
+.payment-method-card {
+  @apply transition-all duration-300;
+}
+
+.order-summary-card:hover,
+.payment-method-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Enhanced Typography */
+.qris-title {
+  @apply bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent;
+}
+
+.payment-status-title {
+  @apply bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent;
+}

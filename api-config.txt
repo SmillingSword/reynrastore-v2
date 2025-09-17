@@ -1,0 +1,27 @@
+# API Configuration untuk Reynra Store
+# Copy konfigurasi ini ke file .env Anda
+
+# Midtrans Configuration (Sandbox)
+MIDTRANS_ENVIRONMENT=sandbox
+MIDTRANS_SERVER_KEY=SB-Mid-server-JsZA6u1In5DwqjgZAPrmddXH
+MIDTRANS_CLIENT_KEY=SB-Mid-client-SOJvTjKphFMqW109
+MIDTRANS_IS_SANITIZED=true
+MIDTRANS_IS_3DS=true
+
+# Digiflazz Configuration
+DIGGIE_API_URL=https://api.digiflazz.com/v1
+DIGGIE_API_KEY=dev-a863fda0-37de-11f0-821d-59dabea8bfa9
+DIGGIE_USERNAME=mokoveo.JLd6W
+DIGGIE_SIGNATURE=your-signature-here
+DIGGIE_TIMEOUT=30
+
+# Cara menggunakan:
+# 1. Buka file .env di root project
+# 2. Cari bagian Midtrans dan Digiflazz
+# 3. Replace dengan nilai-nilai di atas
+# 4. Restart server Laravel: php artisan serve
+
+# Note: 
+# - URL API sudah diupdate ke https://api.digiflazz.com/v1
+# - Tambahkan DIGGIE_SIGNATURE sesuai dengan akun Digiflazz Anda
+# - DIGGIE_TIMEOUT default 30 detik

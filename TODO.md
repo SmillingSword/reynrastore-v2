@@ -1,0 +1,2 @@
+- [x] Fix filter text visibility in Products.vue by adding custom CSS for select dropdown options
+- [ ] Test the filter UI to ensure text remains visible when clicked
